@@ -1,0 +1,27 @@
+[
+{
+"email":"utkarshsingh@gmail.com",
+"password": "Utkarsh@12345",
+"product": "ADIDAS ORIGINAL",
+"country": "India",
+"cvv_no": "123",
+"Bank_name": "Utkarsh Singh",
+"country_initial": "Ind"
+
+},
+{
+"email":"RahulSingh@gmail.com",
+"password": "Rahul@12345",
+"product": "IPHONE 13 PRO",
+"country": "India",
+"cvv_no": "123",
+"Bank_name": "Rahul Singh",
+"country_initial": "Ind"
+}
+
+
+
+
+
+
+]
