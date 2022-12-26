@@ -3,6 +3,7 @@ package Practice.SeleniumFrameworkData;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -75,6 +76,10 @@ public class DataProviders extends BaseTest {
 		XSSFWorkbook workbook = new XSSFWorkbook(file_path);
 		XSSFSheet sheet = workbook.getSheet("Test_Data_Sheet1");
 		int row_count = sheet.getPhysicalNumberOfRows();
+		int total_row = 0;
+		String Option_value = "Y";
+		int a = 8;
+		ArrayList<String> list = new ArrayList<String>();
 		XSSFRow row = sheet.getRow(1);
 		int column_count = row.getLastCellNum(); // to get the total number of column
 
@@ -90,9 +95,20 @@ public class DataProviders extends BaseTest {
 				data[i][j] = formatter.formatCellValue(cell);
 
 			}
+//			if (list.get(a).contentEquals(Option_value)) {
+//				total_row++;
+//				// Object data1[][] = new Object [total_row][column_count];
+//				System.out.println("half work done");
+//				for (int k = 0; k < 9; k++) {
+//					data[i][k] = list.get(k);
+//					System.out.println(row.getCell(k));
+//				}
+//
+//			}
+
 			// System.out.println("Outer loop Ended");
 		}
-		
+
 		return data;
 
 	}

@@ -47,9 +47,10 @@ public class SubmitOrderTest extends BaseTest {
 	@Test(dataProvider = "getExcelData", dataProviderClass = DataProviders.class)
 	public void submitOrder(String Sr_no, String Email, String PassWord, String Product, String Country, String Cvv_no,
 			String Bank_Name, String Country_Initial, String Options) throws IOException, InterruptedException {
-
+         System.out.println(Options);
 		// List<WebElement> products = menu.getProductlist();
-
+		if (Options.equalsIgnoreCase("Yes")) {
+			System.out.println("This is in if "+ Options);
 			ProductCatalogue menu = landingpage.loginApplication(Email, PassWord);
 			menu.addproductTocart(Product);
 
@@ -64,7 +65,15 @@ public class SubmitOrderTest extends BaseTest {
 
 			Boolean value = ConfirmPage.PrinConfirmation_mess();
 			Assert.assertTrue(value, "THANKYOU FOR THE ORDER.");
+			
+		} else {
+			System.out.println("This is in else "+ Options);
+			throw new SkipException("The Test is Skipped");
+			
+		}
 
+			
+			
 	}
 
 	@Test(dependsOnMethods = { "submitOrder" }, dataProvider = "getExcelData", dataProviderClass = DataProviders.class)
